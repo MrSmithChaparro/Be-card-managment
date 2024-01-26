@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:12.9-alpine
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: "bd_name"
+      POSTGRES_HOST_AUTH_METHOD: "trust"  
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./data/db_backups:/mnt/db_backups
+
+  spring-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-spring-app
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+    depends_on:
+      - db
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  postgres:
+    driver: local
