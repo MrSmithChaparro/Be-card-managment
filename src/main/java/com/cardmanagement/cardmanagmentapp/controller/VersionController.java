@@ -1,4 +1,4 @@
-package com.cardmanagement.cardmanagment.controller;
+package com.cardmanagement.cardmanagmentapp.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
