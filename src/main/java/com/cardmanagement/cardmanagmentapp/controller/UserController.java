@@ -20,7 +20,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/register")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO user) {
         return userService.createUser(user);
     }
