@@ -9,7 +9,6 @@
     <description>Card management and associated finances.</description>
 
     <properties>
-        <!-- Other properties -->
         <app.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</app.version>
     </properties>
 
@@ -23,7 +22,6 @@
     </build>
 
     <dependencies>
-        <!-- Your dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -40,7 +38,6 @@
         <dependency>
             <groupId>org.liquibase.ext</groupId>
             <artifactId>liquibase-hibernate5</artifactId>
-            <!-- Cambia la versión a una que esté disponible en Maven Central -->
             <version>4.24.0</version>
         </dependency>
         <dependency>
@@ -62,15 +59,32 @@
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
-            <version>2.0.1.Final</version> <!-- Puedes verificar la versión más reciente -->
+            <version>2.0.1.Final</version> 
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.11.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.11.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.11.2</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.4</version> <!-- Cambia a la versión más reciente compatible -->
-        <relativePath /> <!-- lookup parent from repository -->
+        <version>2.6.4</version> 
+        <relativePath />
     </parent>
 
 </project>
